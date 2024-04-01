@@ -20,12 +20,24 @@ export default function Countdown() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        columnGap="3rem"
+        columnGap={{ xs: "1rem", md: "3rem" }}
         width="100%"
       >
-        <FloralFrame time={`${formattedTime.days}D`} />
-        <FloralFrame time={`${formattedTime.hours}H`} />
-        <FloralFrame time={`${formattedTime.minutes}M`} />
+        <FloralFrame
+          time={`${formattedTime.days}D`}
+          data-aos="fade-up-right"
+          data-aos-delay="1000"
+        />
+        <FloralFrame
+          time={`${formattedTime.hours}H`}
+          data-aos="flip-up"
+          data-aos-delay="1000"
+        />
+        <FloralFrame
+          time={`${formattedTime.minutes}M`}
+          data-aos="fade-up-left"
+          data-aos-delay="1000"
+        />
       </Box>
     </Box>
   );
@@ -33,11 +45,11 @@ export default function Countdown() {
 
 type FloralFrameProps = {
   time: string;
+  [key: string]: any;
 };
 
-const FloralFrame = ({ time }: FloralFrameProps) => {
+const FloralFrame = ({ time, ...rest }: FloralFrameProps) => {
   const onClick = () => {
-    // scroll to div with id time-and-place
     document
       .getElementById("time-and-place")
       ?.scrollIntoView({ behavior: "smooth" });
@@ -48,8 +60,8 @@ const FloralFrame = ({ time }: FloralFrameProps) => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      width="200px"
-      height="200px"
+      width={{ xs: "100px", md: "200px" }}
+      height={{ xs: "100px", md: "200px" }}
       position="relative"
       zIndex="2"
       sx={{
@@ -63,6 +75,7 @@ const FloralFrame = ({ time }: FloralFrameProps) => {
         },
       }}
       onClick={onClick}
+      {...rest}
     >
       <Typography variant="h3" fontFamily="Iosevka">
         {time}

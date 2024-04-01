@@ -23,7 +23,13 @@ export default function RollingMenu({ activeSlide }: RollingMenuProps) {
       }}
     >
       <Box className="where">
-        <Image src={FloralFrame} alt="floral_frame" width={100} height={100} />
+        <Image
+          src={FloralFrame}
+          alt="floral_frame"
+          width={100}
+          height={100}
+          loading="lazy"
+        />
         <Typography
           variant="h6"
           className="rolling-name"
@@ -33,7 +39,13 @@ export default function RollingMenu({ activeSlide }: RollingMenuProps) {
         </Typography>
       </Box>
       <Box className="story">
-        <Image src={FloralFrame} alt="floral_frame" width={100} height={100} />
+        <Image
+          src={FloralFrame}
+          alt="floral_frame"
+          width={100}
+          height={100}
+          loading="lazy"
+        />
         <Typography
           variant="h6"
           className="rolling-name"
@@ -43,7 +55,13 @@ export default function RollingMenu({ activeSlide }: RollingMenuProps) {
         </Typography>
       </Box>
       <Box className="gallery">
-        <Image src={FloralFrame} alt="floral_frame" width={100} height={100} />
+        <Image
+          src={FloralFrame}
+          alt="floral_frame"
+          width={100}
+          height={100}
+          loading="lazy"
+        />
         <Typography
           variant="h6"
           className="rolling-name"

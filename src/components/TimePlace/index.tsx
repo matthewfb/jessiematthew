@@ -1,13 +1,27 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
+import Link from "next/link";
 
 export default function TimePlace() {
+  const isMobile = useMediaQuery("(max-width: 1439px)");
   return (
-    <Box minHeight="100vh" width="100%" id="time-and-place">
-      <Box maxWidth="1440px" margin="0 auto" paddingY="4rem">
-        <Typography variant="h1">Time & Place</Typography>
+    <Box minHeight="100vh" width="100%" id="time-and-place" paddingTop="10rem">
+      <Box maxWidth="1440px" margin="0 auto" paddingY="4rem" paddingX="1.5rem">
+        <Typography
+          variant={isMobile ? "h2" : "h1"}
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          Time & Place
+        </Typography>
         <Box color="var(--lighter-text)" paddingTop="2rem">
-          <Typography variant="h4" fontFamily="LilyScriptOne">
-            03 Đặng Văn Sâm Street, 9 Ward, Phú Nhuận District, Hồ Chí Minh
+          <Typography
+            variant="h4"
+            fontFamily="Darling"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            03 Đặng Văn Sâm Street, 9 Ward, Phú Nhuận District, Hồ Chí Minh City
           </Typography>
           <Typography
             variant="h2"
@@ -21,6 +35,9 @@ export default function TimePlace() {
                 color: "var(--light-orange)",
               },
             }}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="1000"
           >
             19:00 PM - 21:00 PM
           </Typography>
@@ -34,8 +51,12 @@ export default function TimePlace() {
             position: "relative",
             zIndex: 4,
             marginTop: "2rem",
+            borderRadius: "8px",
           }}
           loading="lazy"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="1000"
         ></iframe>
         <Box paddingTop="2rem">
           <Typography
@@ -50,17 +71,37 @@ export default function TimePlace() {
                 color: "var(--light-orange)",
               },
             }}
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
-            === Guest Images (Will available after the wedding) ===
+            <Link href="/gallery">
+              === Guest Images (Will available after the wedding) ===
+            </Link>
           </Typography>
         </Box>
         <Box paddingTop="2rem">
           <Typography
+            fontFamily="LilyScriptOne"
+            color="var(--lighter-text)"
+            variant="h5"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            data-aos-delay="1000"
+          >
+            Love is patient, love is kind. It does not envy, it does not boast,
+            it is not proud. It does not dishonor others, it is not
+            self-seeking, it is not easily angered, it keeps no record of wrongs
+            - 1 Corinthians 13:4-5
+          </Typography>
+          <Typography
             variant="h1"
             fontFamily="DancingScript"
             color="var(--light-orange)"
+            data-aos="fade-down"
+            data-aos-delay="1500"
+            data-aos-duration="1500"
           >
-            Love, Jessie & Matthew
+            Love --- Jessie & Matthew
           </Typography>
         </Box>
       </Box>

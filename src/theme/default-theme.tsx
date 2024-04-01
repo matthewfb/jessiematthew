@@ -30,18 +30,27 @@ export const defaultTheme: ThemeOptions = {
       fontWeight: 600,
       lineHeight: "normal",
       fontFamily: "Elsie",
+      "@media (max-width: 1439px)": {
+        fontSize: 40,
+      },
     },
     h3: {
       fontSize: 48,
       fontWeight: 600,
       lineHeight: "normal",
       fontFamily: "Elsie",
+      "@media (max-width: 1439px)": {
+        fontSize: 32,
+      },
     },
     h4: {
       fontSize: 34,
       fontWeight: 600,
       lineHeight: "normal",
       fontFamily: "Elsie",
+      "@media (max-width: 1439px)": {
+        fontSize: 26,
+      },
     },
     h5: {
       fontSize: 24,
@@ -54,6 +63,9 @@ export const defaultTheme: ThemeOptions = {
       fontWeight: 600,
       lineHeight: "normal",
       fontFamily: "Elsie",
+      "@media (max-width: 1439px)": {
+        fontSize: 16,
+      },
     },
     body1: {
       fontSize: 16,

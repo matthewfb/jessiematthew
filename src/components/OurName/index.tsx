@@ -68,7 +68,11 @@ export default function OurName() {
       position="relative"
       zIndex="999"
     >
-      <Typography fontSize="10rem" fontFamily="Darling" color="var(--brown-bg)">
+      <Typography
+        fontSize={{ xs: "5rem", md: "10rem" }}
+        fontFamily="Darling"
+        color="var(--brown-bg)"
+      >
         Jessie{" "}
         <span
           style={{

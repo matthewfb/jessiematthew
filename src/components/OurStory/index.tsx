@@ -1,13 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { use } from "react";
 import "./index.css";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import { Parallax, useParallax } from "react-scroll-parallax";
 
 export default function OurStory() {
+  const isMobile = useMediaQuery("(max-width: 1439px)");
   const [progress, setProgress] = React.useState(0);
   const [entered, setEntered] = React.useState(false);
+
+  const { ref: rightParallaxRef } = useParallax<HTMLDivElement>({
+    speed: 100,
+  });
+
+  const { ref: leftParallaxRef } = useParallax<HTMLDivElement>({
+    speed: 40,
+  });
+
+  const { ref } = useParallax<HTMLDivElement>({
+    speed: 20,
+  });
+
+  const { ref: nameRef } = useParallax<HTMLDivElement>({
+    translateX: ["100px", isMobile ? "-1000px" : "-700px"],
+  });
+
+  const { ref: nameBackgroundRef } = useParallax<HTMLDivElement>({
+    translateX: ["100px", "-2000px"],
+  });
 
   return (
     <Parallax
@@ -17,45 +38,53 @@ export default function OurStory() {
     >
       <Box
         width="100%"
-        padding="20rem"
+        padding={{ xs: "2rem", md: "20rem" }}
         display="flex"
         justifyContent="center"
-        paddingTop="30rem"
       >
         <Box
           maxWidth="1920px"
           width="100%"
-          paddingLeft="2rem"
+          paddingLeft={{ xs: 0, md: "2rem" }}
           display="flex"
           position="relative"
           alignItems="center"
+          flexDirection={{
+            xs: "column",
+            md: "row",
+          }}
         >
-          <div className="gift-card">
-            <Typography variant="h3" fontFamily="LilyScriptOne">
-              05
-            </Typography>
-            <Typography variant="h3" fontFamily="LilyScriptOne">
-              May
-            </Typography>
-            <Box paddingX="1rem">
-              <Box borderRadius="1rem" overflow="hidden">
-                <img src="/images/story-card.JPG" alt="our-story" />
+          <Box position="relative">
+            <div className="gift-card" ref={ref}>
+              <Typography variant="h3" fontFamily="Iosevka">
+                05
+              </Typography>
+              <Typography variant="h3" fontFamily="LilyScriptOne">
+                May
+              </Typography>
+              <Box paddingX="1rem">
+                <Box borderRadius="1rem" overflow="hidden">
+                  <img
+                    src="/images/story-card.JPG"
+                    alt="our-story"
+                    loading="lazy"
+                  />
+                </Box>
               </Box>
-            </Box>
 
-            <Box paddingTop="2rem" width="100%" paddingX="2rem">
-              <Typography variant="h6" fontFamily="LilyScriptOne">
-                &quot;I do&quot; as two words has so much power. It&apos;s a
-                vow; a promise; a commitment.
-              </Typography>
-              <Typography variant="h6" fontFamily="LilyScriptOne">
-                Thank God for bringing us together.
-              </Typography>
-            </Box>
-
-            <div className="right-parallax"></div>
-            <div className="left-parallax"></div>
-          </div>
+              <Box paddingTop="2rem" width="100%" paddingX="2rem">
+                <Typography variant="h6" fontFamily="LilyScriptOne">
+                  &quot;I do&quot; as two words has so much power. It&apos;s a
+                  vow; a promise; a commitment.
+                </Typography>
+                <Typography variant="h6" fontFamily="LilyScriptOne">
+                  Thank God for bringing us together.
+                </Typography>
+              </Box>
+            </div>
+            <div className="right-parallax" ref={rightParallaxRef}></div>
+            <div className="left-parallax" ref={leftParallaxRef}></div>
+          </Box>
           <Box
             display="flex"
             justifyContent="center"
@@ -71,6 +100,10 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
+                  data-aos="fade-down-right"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-sine"
                 >
                   2017 - First known each other
                 </Typography>
@@ -86,6 +119,9 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
+                  data-aos="fade-right"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
                 >
                   2019 - Millitary Service & Long Distance
                 </Typography>
@@ -101,6 +137,9 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
+                  data-aos="fade-right"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
                 >
                   2023 - The Proposal
                 </Typography>
@@ -116,6 +155,10 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
+                  data-aos="fade-up-right"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-sine"
                 >
                   2025 - And Beyond
                 </Typography>
@@ -143,6 +186,9 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
+                  data-aos="fade-down-left"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
                 >
                   2018 - Officially Dating
                 </Typography>
@@ -162,6 +208,9 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
+                  data-aos="fade-left"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
                 >
                   2021 - Covid 19, Ups & Downs
                 </Typography>
@@ -181,6 +230,9 @@ export default function OurStory() {
                   variant="body1"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
+                  data-aos="fade-up-left"
+                  data-aos-anchor-placement="center-center"
+                  data-aos-duration="1000"
                 >
                   2024 - The Wedding
                 </Typography>
@@ -194,7 +246,7 @@ export default function OurStory() {
               opacity: 0.4,
             }}
           >
-            <Typography variant="h1" fontFamily="LilyScriptOne">
+            <Typography variant="h1" fontFamily="LilyScriptOne" ref={nameRef}>
               Jessie &amp; Matthew is getting married
             </Typography>
           </Box>
@@ -204,6 +256,7 @@ export default function OurStory() {
             sx={{
               opacity: 1,
             }}
+            ref={nameBackgroundRef}
           ></Box>
         </Box>
       </Box>

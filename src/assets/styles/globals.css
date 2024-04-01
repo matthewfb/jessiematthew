@@ -39,11 +39,13 @@ body {
 :root {
   --lighter-text: #e6d9b2;
   --white-text: #e19f63;
-  --dark-background: #212c40;
+  --dark-background: #231f20;
   --light-orange: #e66136;
   --brown-bg: #3c2912;
   --dark-brown-bg: #1a160d;
   --middle-dark-brown-bg: #2c1f10;
+  --eternity: #221a0d;
+  --light-red: #e14d3e;
   /* --white-text: #3c2912; */
 }
 
