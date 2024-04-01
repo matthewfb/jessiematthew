@@ -5,6 +5,8 @@ import { defaultTheme } from "@/theme/default-theme";
 import { ThemeProvider } from "@mui/material";
 import "aos/dist/aos.css";
 import "animate.css";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Jessie & Matthew",
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+        <ThemeProvider theme={defaultTheme}>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );
