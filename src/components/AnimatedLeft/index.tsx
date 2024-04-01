@@ -27,30 +27,33 @@ export default function AnimatedLeft({ activeSlide }: AnimatedLeftProps) {
         rowGap="0.25rem"
         onClick={scrollTop}
         borderRadius="4px"
+        data-aos="fade-right"
+        data-aos-delay="1000"
+        data-aos-duration="1500"
       >
         <Typography variant="h6" fontFamily="LilyScriptOne">
           J
         </Typography>
-        <Image src={Heart} alt="heart" width={24} height={24} />
+        <Image src={Heart} alt="heart" width={24} height={24} loading="lazy" />
         <Typography variant="h6" fontFamily="LilyScriptOne">
           M
         </Typography>
       </Box>
       <TimeSign
         text={`${formattedTime.days} DAYS`}
-        top="calc(10vh + 0rem)"
+        top={{ xs: "76vh", md: "calc(10vh + 0rem)" }}
         className="day"
         activeSlide={activeSlide}
       />
       <TimeSign
         text={`${formattedTime.hours} HOURS`}
-        top="calc(10vh + 4rem)"
+        top={{ xs: "80vh", md: "calc(10vh + 4rem)" }}
         className="hour"
         activeSlide={activeSlide}
       />
       <TimeSign
         text={`${formattedTime.minutes} MINS`}
-        top="calc(10vh + 8rem)"
+        top={{ xs: "84vh", md: "calc(10vh + 8rem)" }}
         className="minute"
         activeSlide={activeSlide}
       />
@@ -65,7 +68,7 @@ const TimeSign = ({
   activeSlide,
 }: {
   text: string;
-  top: string;
+  top: any;
   className: string;
   activeSlide: number;
 }) => {
@@ -86,7 +89,7 @@ const TimeSign = ({
       display="flex"
       justifyContent="left"
       alignItems="center"
-      paddingLeft="12px"
+      paddingLeft={{ md: "12px", xs: "0px" }}
       sx={{
         opacity: activeSlide !== 0 ? "1" : "0",
         transition: "all 0.5s ease-in-out",

@@ -2,7 +2,12 @@ import { Box, Typography } from "@mui/material";
 
 export default function InformationRight() {
   return (
-    <Box position="fixed" right="0" top="10vh" zIndex={11}>
+    <Box
+      position="fixed"
+      right="0"
+      top={{ xs: "6rem", md: "10vh" }}
+      zIndex={11}
+    >
       <Box
         display="flex"
         flexDirection="column"
@@ -20,6 +25,9 @@ export default function InformationRight() {
           color: "var(--lighter-text)",
         }}
         borderRadius="4px"
+        data-aos="fade-left"
+        data-aos-delay="1500"
+        data-aos-duration="1500"
       >
         <Typography variant="h6" fontFamily="Iosevka">
           05

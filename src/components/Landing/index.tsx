@@ -27,7 +27,7 @@ export default function Landing() {
       >
         <Box
           paddingX="1.25rem"
-          paddingTop="10rem"
+          paddingTop={{ xs: "7rem", md: "10rem" }}
           width="100%"
           minHeight="100vh"
           display="flex"
@@ -37,7 +37,7 @@ export default function Landing() {
           <Box textAlign="center">
             <OurName />
           </Box>
-          <Box textAlign="center" paddingTop="20rem">
+          <Box textAlign="center" paddingTop={{ xs: "17rem", md: "18rem" }}>
             <Countdown />
           </Box>
           <div id="background-wrap">

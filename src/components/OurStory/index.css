@@ -2,11 +2,13 @@
   position: relative;
   width: 400px;
   background: var(--middle-dark-brown-bg);
-  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  @media screen and (max-width: 1439px) {
+    width: 300px;
+  }
 }
 
 img {
@@ -16,25 +18,25 @@ img {
 
 .gift-card::after {
   content: "";
-  border-top: 60px solid #2c1f10;
+  border-top: 60px solid var(--middle-dark-brown-bg);
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
   height: 0;
   left: 0;
   position: absolute;
-  bottom: -59px;
+  bottom: -60px;
   width: 0;
 }
 
 .gift-card::before {
   content: "";
-  border-bottom: 60px solid #2c1f10;
+  border-bottom: 60px solid var(--middle-dark-brown-bg);
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
   height: 0;
   left: 0;
   position: absolute;
-  top: -59px;
+  top: -60px;
   width: 0;
 }
 
@@ -43,15 +45,15 @@ img {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 85%;
-  background-color: #221a0d;
+  left: 75%;
+  background-color: var(--eternity);
   width: 200px;
   z-index: -1;
 }
 
 .right-parallax::after {
   content: "";
-  border-top: 60px solid #221a0d;
+  border-top: 60px solid var(--eternity);
   border-left: 0px solid transparent;
   border-right: 200px solid transparent;
   height: 0;
@@ -63,7 +65,7 @@ img {
 
 .right-parallax::before {
   content: "";
-  border-bottom: 60px solid #221a0d;
+  border-bottom: 60px solid var(--eternity);
   border-left: 200px solid transparent;
   border-right: 0px solid transparent;
   height: 0;
@@ -76,11 +78,35 @@ img {
 .left-parallax {
   position: absolute;
   bottom: 5rem;
-  left: -20%;
+  left: -15%;
   background-color: var(--white-text);
-  width: 200px;
-  height: 500px;
+  width: 160px;
+  height: 800px;
   z-index: -1;
+}
+
+.left-parallax::after {
+  content: "";
+  border-top: 40px solid var(--white-text);
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  height: 0;
+  left: 0;
+  position: absolute;
+  bottom: -40px;
+  width: 0;
+}
+
+.left-parallax::before {
+  content: "";
+  border-bottom: 40px solid var(--white-text);
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: -40px;
+  width: 0;
 }
 
 .dot {
@@ -93,18 +119,18 @@ img {
 
 .name {
   top: 50%;
-  left: 50%;
+  left: 70%;
   white-space: nowrap;
-  z-index: 2;
+  z-index: -2;
 }
 
 .name-background {
   position: absolute;
-  z-index: 1;
+  z-index: -3;
   top: 47%;
-  left: 50%;
+  left: 100%;
   background-color: var(--middle-dark-brown-bg);
-  width: 50vw;
+  width: 80vw;
   height: 200px;
 }
 
@@ -130,4 +156,34 @@ img {
   position: absolute;
   bottom: 0;
   width: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .gift-card {
+    width: 300px;
+  }
+
+  .gift-card::after {
+    border-top: 60px solid var(--middle-dark-brown-bg);
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+  }
+
+  .gift-card::before {
+    border-bottom: 60px solid var(--middle-dark-brown-bg);
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+  }
+
+  .left-parallax {
+    bottom: -5rem;
+  }
+
+  .name h1 {
+    font-size: 52px !important;
+  }
+
+  .name-background {
+    width: 1920px;
+  }
 }

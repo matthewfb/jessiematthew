@@ -5,14 +5,14 @@
 @keyframes heartbeat {
   0% {
     transform: scale(1);
-    color: var(--brown-bg);
-  }
-  50% {
-    transform: scale(1.1);
     color: var(--light-orange);
+  }
+  10% {
+    transform: scale(1.1);
+    color: var(--light-red);
   }
   100% {
     transform: scale(1);
-    color: var(--brown-bg);
+    color: var(--light-orange);
   }
 }

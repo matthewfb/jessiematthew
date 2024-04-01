@@ -4,7 +4,7 @@ import MovingText from "react-moving-text";
 import { Box, useMediaQuery } from "@mui/material";
 
 export default function WeMadeIt() {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:1439px)");
 
   return (
     <Box
@@ -15,6 +15,8 @@ export default function WeMadeIt() {
         fontSize: isMobile ? "2rem" : "4rem",
         fontFamily: "LilyScriptOne",
       }}
+      data-aos="fade-up"
+      data-aos-delay="500"
     >
       <MovingText
         type="bounce"
