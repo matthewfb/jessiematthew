@@ -13,7 +13,7 @@ import "./index.css";
 import "./star.module.scss";
 
 export default function WeddingPhotoshoot() {
-  const isMobile = useMediaQuery("(max-width: 1439px)");
+  const isMobile = useMediaQuery("(max-width: 900px)");
   const jessie = ["Jessie", "Trang Thien"];
   const matthew = ["Matthew", "Truong Nguyen"];
   const [wifeAlias, setWifeAlias] = useState(jessie[0]);
@@ -82,7 +82,7 @@ export default function WeddingPhotoshoot() {
                   src={FirstImg}
                   alt="jessie matthew photoshoot 1"
                   width={isMobile ? 450 : 800}
-                  height={isMobile ? 200 : 300}
+                  height={isMobile ? 250 : 300}
                   loading="lazy"
                 />
               </motion.div>
@@ -114,7 +114,7 @@ export default function WeddingPhotoshoot() {
                 <Image
                   src={SecondImg}
                   alt="jessie matthew photoshoot 1"
-                  height={isMobile ? 600 : 400}
+                  height={isMobile ? 500 : 600}
                   width={isMobile ? 200 : 300}
                   loading="lazy"
                 />
@@ -184,8 +184,8 @@ export default function WeddingPhotoshoot() {
                 <Image
                   src={ThirdImg}
                   alt="jessie matthew photoshoot 3"
-                  width={300}
-                  height={600}
+                  height={isMobile ? 500 : 600}
+                  width={isMobile ? 200 : 300}
                   loading="lazy"
                 />
               </motion.div>
@@ -200,7 +200,7 @@ export default function WeddingPhotoshoot() {
                 }}
                 initial={{
                   rotate: "-90deg",
-                  translateX: "300px",
+                  translateX: isMobile ? "100px" : "300px",
                   translateY: "200px",
                   opacity: 0,
                 }}
@@ -217,8 +217,8 @@ export default function WeddingPhotoshoot() {
                 <Image
                   src={FourthImg}
                   alt="jessie matthew photoshoot 4"
-                  width={800}
-                  height={300}
+                  width={isMobile ? 450 : 800}
+                  height={isMobile ? 250 : 300}
                   loading="lazy"
                 />
               </motion.div>
