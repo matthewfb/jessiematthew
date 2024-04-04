@@ -10,6 +10,10 @@ export default function OurStory() {
   const [progress, setProgress] = React.useState(0);
   const [entered, setEntered] = React.useState(false);
 
+  const { ref: backgroundRef } = useParallax<HTMLDivElement>({
+    speed: 20,
+  });
+
   const { ref: rightParallaxRef } = useParallax<HTMLDivElement>({
     speed: 100,
   });
@@ -42,6 +46,11 @@ export default function OurStory() {
         display="flex"
         justifyContent="center"
       >
+        <Box position="relative">
+          <div className="background-container" ref={backgroundRef}>
+            <div className="stars"></div>
+          </div>
+        </Box>
         <Box
           maxWidth="1920px"
           width="100%"
@@ -65,7 +74,7 @@ export default function OurStory() {
               <Box paddingX="1rem">
                 <Box borderRadius="1rem" overflow="hidden">
                   <img
-                    src="/images/story-card.JPG"
+                    src="/images/story-card_min.JPG"
                     alt="our-story"
                     loading="lazy"
                   />

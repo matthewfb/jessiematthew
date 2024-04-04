@@ -41,19 +41,22 @@ export default function AnimatedLeft({ activeSlide }: AnimatedLeftProps) {
       </Box>
       <TimeSign
         text={`${formattedTime.days} DAYS`}
-        top={{ xs: "76vh", md: "calc(10vh + 0rem)" }}
+        top={{ xs: "unset", md: "calc(10rem + 0rem)" }}
+        bottom={{ xs: "calc(-70vh + 4rem)", md: "unset" }}
         className="day"
         activeSlide={activeSlide}
       />
       <TimeSign
         text={`${formattedTime.hours} HOURS`}
-        top={{ xs: "80vh", md: "calc(10vh + 4rem)" }}
+        top={{ xs: "unset", md: "calc(10rem + 4rem)" }}
+        bottom={{ xs: "calc(-70vh + 2rem)", md: "unset" }}
         className="hour"
         activeSlide={activeSlide}
       />
       <TimeSign
         text={`${formattedTime.minutes} MINS`}
-        top={{ xs: "84vh", md: "calc(10vh + 8rem)" }}
+        top={{ xs: "unset", md: "calc(10rem + 8rem)" }}
+        bottom={{ xs: "calc(-70vh + 0rem)", md: "unset" }}
         className="minute"
         activeSlide={activeSlide}
       />
@@ -64,11 +67,13 @@ export default function AnimatedLeft({ activeSlide }: AnimatedLeftProps) {
 const TimeSign = ({
   text,
   top,
+  bottom,
   className,
   activeSlide,
 }: {
   text: string;
   top: any;
+  bottom: any;
   className: string;
   activeSlide: number;
 }) => {
@@ -85,6 +90,7 @@ const TimeSign = ({
       height="2rem"
       position="fixed"
       top={top}
+      bottom={bottom}
       zIndex="12"
       display="flex"
       justifyContent="left"

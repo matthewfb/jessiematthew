@@ -11,7 +11,8 @@ export default function Landing() {
     <Box
       width="100%"
       sx={{
-        background: "url('/images/landing_bg.JPG'), url('/images/stars.jpg')",
+        background:
+          "url('/images/landing_bg_min.JPG'), url('/images/stars_min.jpg')",
         backgroundPosition: "64% 50%",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -37,7 +38,7 @@ export default function Landing() {
           <Box textAlign="center">
             <OurName />
           </Box>
-          <Box textAlign="center" paddingTop={{ xs: "17rem", md: "18rem" }}>
+          <Box textAlign="center" paddingTop={{ xs: "8rem", md: "18rem" }}>
             <Countdown />
           </Box>
           <div id="background-wrap">

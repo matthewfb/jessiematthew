@@ -1,4 +1,7 @@
+"use client";
+
 import { PaletteOptions, ThemeOptions } from "@mui/material";
+import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
 
 export const customColor = {
   yellowText: "#ffc000",
@@ -12,7 +15,7 @@ export const palette: PaletteOptions = {
   },
 };
 
-export const defaultTheme: ThemeOptions = {
+export const theme = extendTheme({
   typography: {
     fontFamily: `"Elsie", sans-serif`,
     fontWeightRegular: 400,
@@ -86,7 +89,14 @@ export const defaultTheme: ThemeOptions = {
       fontFamily: "Elsie",
     },
   },
-  palette,
+  colorSchemes: {
+    light: {
+      palette,
+    },
+    dark: {
+      palette,
+    },
+  },
   components: {
     MuiButtonBase: {
       defaultProps: {
@@ -94,4 +104,4 @@ export const defaultTheme: ThemeOptions = {
       },
     },
   },
-};
+});

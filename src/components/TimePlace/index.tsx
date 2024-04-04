@@ -2,7 +2,7 @@ import { Box, Typography, useMediaQuery } from "@mui/material";
 import Link from "next/link";
 
 export default function TimePlace() {
-  const isMobile = useMediaQuery("(max-width: 1439px)");
+  const isMobile = useMediaQuery("(max-width: 900px)");
   return (
     <Box minHeight="100vh" width="100%" id="time-and-place" paddingTop="10rem">
       <Box maxWidth="1440px" margin="0 auto" paddingY="4rem" paddingX="1.5rem">
@@ -13,10 +13,19 @@ export default function TimePlace() {
         >
           Time & Place
         </Typography>
-        <Box color="var(--lighter-text)" paddingTop="2rem">
+        <Typography
+          variant={isMobile ? "h4" : "h3"}
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          fontFamily="LilyScriptOne"
+          paddingTop="2rem"
+        >
+          Capella Park View
+        </Typography>
+        <Box color="var(--lighter-text)">
           <Typography
             variant="h4"
-            fontFamily="Darling"
+            fontFamily="LilyScriptOne"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="500"
@@ -24,7 +33,7 @@ export default function TimePlace() {
             03 Đặng Văn Sâm Street, 9 Ward, Phú Nhuận District, Hồ Chí Minh City
           </Typography>
           <Typography
-            variant="h2"
+            variant={isMobile ? "h3" : "h2"}
             fontFamily="Iosevka"
             marginTop="2rem"
             sx={{
@@ -39,13 +48,13 @@ export default function TimePlace() {
             data-aos-duration="1000"
             data-aos-delay="1000"
           >
-            19:00 PM - 21:00 PM
+            18:00 PM - 21:00 PM
           </Typography>
         </Box>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.4759753652634!2d106.67626930369013!3d10.811044949369409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292d257cfe31%3A0x8a867839593c68c8!2zMyDEkOG6t25nIFbEg24gU8OibSwgUGjGsOG7nW5nIDksIFTDom4gQsOsbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1711526232588!5m2!1sen!2s"
           width="100%"
-          height="800px"
+          height={isMobile ? "300px" : "800px"}
           style={{
             border: 0,
             position: "relative",
