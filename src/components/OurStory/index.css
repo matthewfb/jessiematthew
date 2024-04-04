@@ -187,3 +187,24 @@ img {
     width: 1920px;
   }
 }
+
+.background-container {
+  position: fixed;
+  width: 100vw;
+  height: 400vh;
+  top: -200px;
+  left: 0;
+  z-index: 0;
+}
+
+.stars {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png)
+    repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 0;
+}

@@ -70,17 +70,6 @@ const itemData = [
 ];
 
 export default function Page() {
-  const imagesRef = ref(storage, "post-wedding");
-  console.table(imagesRef);
-
-  const getBlobs = async () => {
-    const blobs = await getBlob(imagesRef);
-    console.table(blobs);
-  };
-  useEffect(() => {
-    getBlobs();
-  }, []);
-
   return (
     <Box minWidth="100vw" minHeight="100vh">
       <Box
@@ -102,6 +91,17 @@ export default function Page() {
         >
           Here are some photos from our wedding. We hope you enjoy them.
         </Typography>
+        <Link
+          href="/"
+          style={{
+            paddingTop: "1rem",
+            paddingBottom: "1rem",
+            fontSize: "1.5rem",
+            textDecoration: "none",
+          }}
+        >
+          🎉 Back to main page 🎉
+        </Link>
         <ImageList variant="masonry" cols={3} gap={8}>
           {itemData.map((item) => (
             <Link key={item.img} href={`/photo/${item.id}`}>

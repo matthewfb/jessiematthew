@@ -1,10 +1,11 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import "./index.css";
 import { useTimeCountdown } from "@/hooks/useTimeCountdown";
 import WeMadeIt from "../WeMadeIt";
+import { motion } from "framer-motion";
 
 type MyFormattedTime = {
   days: number;
@@ -13,32 +14,36 @@ type MyFormattedTime = {
 };
 export default function Countdown() {
   const { isMarried, formattedTime } = useTimeCountdown();
+  const isMobile = useMediaQuery("(max-width: 1439px)");
+
   return (
     <Box>
       {isMarried ? <WeMadeIt /> : null}
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-        columnGap={{ xs: "1rem", md: "3rem" }}
-        width="100%"
+      <motion.div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          columnGap: isMobile ? "1rem" : "3rem",
+          width: "100%",
+        }}
+        initial={{
+          translateY: "100px",
+          opacity: 0,
+        }}
+        whileInView={{
+          translateX: "0px",
+          translateY: "0px",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+        }}
       >
-        <FloralFrame
-          time={`${formattedTime.days}D`}
-          data-aos="fade-up-right"
-          data-aos-delay="1000"
-        />
-        <FloralFrame
-          time={`${formattedTime.hours}H`}
-          data-aos="flip-up"
-          data-aos-delay="1000"
-        />
-        <FloralFrame
-          time={`${formattedTime.minutes}M`}
-          data-aos="fade-up-left"
-          data-aos-delay="1000"
-        />
-      </Box>
+        <FloralFrame time={`${formattedTime.days}D`} />
+        <FloralFrame time={`${formattedTime.hours}H`} />
+        <FloralFrame time={`${formattedTime.minutes}M`} />
+      </motion.div>
     </Box>
   );
 }
@@ -65,7 +70,7 @@ const FloralFrame = ({ time, ...rest }: FloralFrameProps) => {
       position="relative"
       zIndex="2"
       sx={{
-        background: "url('/images/floral_frame.png') no-repeat center",
+        background: "url('/images/floral_frame_2.png') no-repeat center",
         backgroundSize: "cover",
         ":hover": {
           transform: "scale(1.1)",
@@ -77,9 +82,24 @@ const FloralFrame = ({ time, ...rest }: FloralFrameProps) => {
       onClick={onClick}
       {...rest}
     >
-      <Typography variant="h3" fontFamily="Iosevka">
-        {time}
-      </Typography>
+      <motion.div
+        initial={{
+          translateY: "100px",
+          opacity: 0,
+        }}
+        whileInView={{
+          translateX: "0px",
+          translateY: "0px",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 2,
+        }}
+      >
+        <Typography variant="h3" fontFamily="Iosevka">
+          {time}
+        </Typography>
+      </motion.div>
     </Box>
   );
 };

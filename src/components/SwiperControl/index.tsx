@@ -15,27 +15,33 @@ import RollingMenu from "../RollingMenu";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Aos from "aos";
-import { useMediaQuery } from "@mui/material";
+import { Skeleton, Stack, useMediaQuery } from "@mui/material";
 import dynamic from "next/dynamic";
+
+const LoadingSkeleton = () => (
+  <Stack justifyContent={"center"} alignItems={"center"} paddingY="2rem">
+    <Skeleton variant="rectangular" width="80vw" height="300px" />
+  </Stack>
+);
 
 const Landing = dynamic(() => import("../Landing"), {
   ssr: false,
-  loading: () => <div>Loading...</div>,
+  loading: () => <LoadingSkeleton />,
 });
 
 const OurStory = dynamic(() => import("../OurStory"), {
   ssr: false,
-  loading: () => <div>Loading...</div>,
+  loading: () => <LoadingSkeleton />,
 });
 
 const WeddingPhotoshoot = dynamic(() => import("../WeddingPhotoshoot"), {
   ssr: false,
-  loading: () => <div>Loading...</div>,
+  loading: () => <LoadingSkeleton />,
 });
 
 const TimePlace = dynamic(() => import("../TimePlace"), {
   ssr: false,
-  loading: () => <div>Loading...</div>,
+  loading: () => <LoadingSkeleton />,
 });
 
 export default function SwiperControl() {

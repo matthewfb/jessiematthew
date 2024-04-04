@@ -1,7 +1,7 @@
 .animated-left {
   position: fixed;
   left: 0;
-  top: 10vh;
+  top: 10rem;
   color: var(--lighter-text);
   z-index: 11;
   will-change: height, width, transform, opacity, color;

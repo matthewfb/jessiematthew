@@ -1,8 +1,10 @@
 import { type Metadata } from "next";
+import { theme } from "@/theme/default-theme";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
+
 import "@/assets/styles/globals.css";
 import "@/assets/styles/fonts.css";
-import { defaultTheme } from "@/theme/default-theme";
-import { ThemeProvider } from "@mui/material";
 import "aos/dist/aos.css";
 import "animate.css";
 
@@ -23,7 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
+        <AppRouterCacheProvider>
+          <CssVarsProvider theme={theme}>{children}</CssVarsProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

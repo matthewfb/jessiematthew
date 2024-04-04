@@ -8,6 +8,8 @@ import ThirdImg from "@/assets/images/wd-pts-3.jpg";
 import FourthImg from "@/assets/images/wd-pts-4.jpg";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useParallax } from "react-scroll-parallax";
+
 import "./index.css";
 // import scss module
 import "./star.module.scss";

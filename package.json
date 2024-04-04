@@ -10,10 +10,12 @@
     "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
+    "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
+    "@mui/material-nextjs": "^5.15.11",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "firebase": "^10.9.0",
