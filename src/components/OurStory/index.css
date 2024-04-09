@@ -195,6 +195,10 @@ img {
   top: -200px;
   left: 0;
   z-index: 0;
+
+  @media screen and (max-width: 991px) {
+    height: 900vh;
+  }
 }
 
 .stars {

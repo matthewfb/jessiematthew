@@ -16,7 +16,7 @@ import "./star.module.scss";
 
 export default function WeddingPhotoshoot() {
   const isMobile = useMediaQuery("(max-width: 900px)");
-  const jessie = ["Jessie", "Trang Thien"];
+  const jessie = ["Jessie", "Trang Thai"];
   const matthew = ["Matthew", "Truong Nguyen"];
   const [wifeAlias, setWifeAlias] = useState(jessie[0]);
   const [husbandAlias, setHusbandAlias] = useState(matthew[0]);

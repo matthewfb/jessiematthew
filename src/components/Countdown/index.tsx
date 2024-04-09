@@ -96,7 +96,11 @@ const FloralFrame = ({ time, ...rest }: FloralFrameProps) => {
           duration: 2,
         }}
       >
-        <Typography variant="h3" fontFamily="Iosevka">
+        <Typography
+          variant="h3"
+          fontFamily="Iosevka"
+          className="gradient-countdown"
+        >
           {time}
         </Typography>
       </motion.div>
