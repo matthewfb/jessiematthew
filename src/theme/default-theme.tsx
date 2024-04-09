@@ -103,5 +103,12 @@ export const theme = extendTheme({
         disableRipple: true,
       },
     },
+    MuiDivider: {
+      styleOverrides: {
+        root: {
+          borderColor: "var(--lighter-text)",
+        },
+      },
+    },
   },
 });

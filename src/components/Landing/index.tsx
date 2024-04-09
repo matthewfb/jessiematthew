@@ -25,6 +25,11 @@ export default function Landing() {
         height="100%"
         margin="auto"
         display="flex"
+        position="relative"
+        zIndex="4"
+        sx={{
+          filter: "blur(0)",
+        }}
       >
         <Box
           paddingX="1.25rem"

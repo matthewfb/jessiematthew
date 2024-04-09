@@ -20,13 +20,17 @@ import dynamic from "next/dynamic";
 
 const LoadingSkeleton = () => (
   <Stack justifyContent={"center"} alignItems={"center"} paddingY="2rem">
-    <Skeleton variant="rectangular" width="80vw" height="300px" />
+    <Skeleton variant="rectangular" width="80vw" height="80vh" />
   </Stack>
 );
 
 const Landing = dynamic(() => import("../Landing"), {
   ssr: false,
-  loading: () => <LoadingSkeleton />,
+  loading: () => (
+    <Stack justifyContent={"center"} alignItems={"center"} paddingY="2rem">
+      <Skeleton variant="rectangular" width="80vw" height="100vh" />
+    </Stack>
+  ),
 });
 
 const OurStory = dynamic(() => import("../OurStory"), {

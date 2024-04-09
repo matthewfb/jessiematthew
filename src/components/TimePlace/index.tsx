@@ -20,7 +20,7 @@ export default function TimePlace() {
           fontFamily="LilyScriptOne"
           paddingTop="2rem"
         >
-          Capella Park View
+          Capella Parkview
         </Typography>
         <Box color="var(--lighter-text)">
           <Typography

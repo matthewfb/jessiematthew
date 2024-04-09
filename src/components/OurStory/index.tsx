@@ -45,6 +45,7 @@ export default function OurStory() {
         padding={{ xs: "2rem", md: "20rem" }}
         display="flex"
         justifyContent="center"
+        position="relative"
       >
         <Box position="relative">
           <div className="background-container" ref={backgroundRef}>
@@ -82,11 +83,11 @@ export default function OurStory() {
               </Box>
 
               <Box paddingTop="2rem" width="100%" paddingX="2rem">
-                <Typography variant="h6" fontFamily="LilyScriptOne">
+                <Typography variant="h5" fontFamily="LilyScriptOne">
                   &quot;I do&quot; as two words has so much power. It&apos;s a
                   vow; a promise; a commitment.
                 </Typography>
-                <Typography variant="h6" fontFamily="LilyScriptOne">
+                <Typography variant="h5" fontFamily="LilyScriptOne">
                   Thank God for bringing us together.
                 </Typography>
               </Box>
@@ -106,7 +107,7 @@ export default function OurStory() {
             <Box display="flex" flexDirection="column" maxWidth="310px">
               <Box display="flex" alignItems="center" justifyContent="flex-end">
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
                   data-aos="fade-down-right"
@@ -125,7 +126,7 @@ export default function OurStory() {
               <Box height="12rem" width="100%"></Box>
               <Box display="flex" alignItems="center" justifyContent="flex-end">
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
                   data-aos="fade-right"
@@ -143,7 +144,7 @@ export default function OurStory() {
               <Box height="12rem" width="100%"></Box>
               <Box display="flex" alignItems="center" justifyContent="flex-end">
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
                   data-aos="fade-right"
@@ -161,7 +162,7 @@ export default function OurStory() {
               <Box height="12rem" width="100%"></Box>
               <Box display="flex" alignItems="center" justifyContent="flex-end">
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingRight="1rem"
                   data-aos="fade-up-right"
@@ -192,7 +193,7 @@ export default function OurStory() {
                   }}
                 />
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
                   data-aos="fade-down-left"
@@ -214,7 +215,7 @@ export default function OurStory() {
                   }}
                 />
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
                   data-aos="fade-left"
@@ -233,10 +234,12 @@ export default function OurStory() {
                 <Divider
                   sx={{
                     width: "3rem",
+                    color: "var(--lighter-text)",
+                    borderColor: "var(--lighter-text)",
                   }}
                 />
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   fontFamily="LilyScriptOne"
                   paddingLeft="1rem"
                   data-aos="fade-up-left"

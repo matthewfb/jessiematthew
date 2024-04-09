@@ -30,6 +30,7 @@ export default function AnimatedLeft({ activeSlide }: AnimatedLeftProps) {
         data-aos="fade-right"
         data-aos-delay="1000"
         data-aos-duration="1500"
+        paddingY="0.25rem"
       >
         <Typography variant="h6" fontFamily="LilyScriptOne">
           J

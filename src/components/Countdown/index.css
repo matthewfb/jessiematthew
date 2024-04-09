@@ -16,3 +16,9 @@
     color: var(--light-orange);
   }
 }
+
+.gradient-countdown {
+  background: -webkit-linear-gradient(var(--eternity), var(--light-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
